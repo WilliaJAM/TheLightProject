@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@keyframes vibrate{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(-2px,-2px)}60%{transform:translate(2px,2px)}80%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
+.vibrate{animation:vibrate 0.4s linear both}
+
+.zoom-in-out-element {
+  animation: zoom-in-zoom-out 1s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 150%;
+  }
+  100% {
+    scale: 100%;
+  }
+}
+
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#selector{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 100%;
+}
+
+
+#selector > div[id="gameShow"]{
+  margin: 15px;
+}
+
+
+#selector > div[id="previousGame"]:hover , #selector > div[id="nextGame"]:hover{
+  transform: scale(1.1);
+}
+#buttonPlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
