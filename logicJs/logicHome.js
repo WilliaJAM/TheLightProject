@@ -142,7 +142,7 @@ buttonNext.addEventListener('click', ()=>{
     selectorGame(getDataBase ,number,)
     console.log(number);
     effect.play();
-    divCardContainer.className = `borderButton slide-right`;
+    divCardContainer.className = `borderButton rotate-vertical-center`;
     divCardContainer.addEventListener('animationend',()=>{
         divCardContainer.className = `borderButton`;
     })
@@ -165,7 +165,7 @@ buttonPrevious.addEventListener('click', ()=>{
         number -= 1
     }
 selectorGame(getDataBase , number)
-    divCardContainer.className = `borderButton slide-left`;
+    divCardContainer.className = `borderButton rotate-vertical-center`;
     divCardContainer.addEventListener('animationend',()=>{
         divCardContainer.className = `borderButton`;
     })
@@ -236,6 +236,7 @@ musicButton.appendChild(buttonPlayMusic);
     selectorGame(getDataBase , number);
 })();
 
-//Tratar de corregir bug que aveces se escucha el audio y cuando se cliequea
-//Hacer cuando cliquee el titulo ejecute una animació
-//Cambir el texto del boton por negro y blanco cuando haga hover
+//Tratar de corregir bug que aveces se escucha el audio y cuando se cliequea.
+//Hacer cuando cliquee el titulo ejecute una animación y cuadrar cuando cambia de contenido
+//Ademas mejorar el cambio de clase cuando ejecuta la animación.
+//Cambir el texto del boton por negro y blanco cuando haga hover.
