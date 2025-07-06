@@ -1,12 +1,13 @@
 const title = document.getElementById("titleGame");
 const ads = document.createElement("h1");
-let  asda = "The Game";
+let  titleMain = "The Game";
 
 let musicList = [
     "../Sound/music/Lancer - Toby Fox.mp3", 
     "../Sound/music/sans. - Toby Fox.mp3",
     "../Sound/music/Ruins - Toby Fox.mp3",
-    "../Sound/music/It's Showtime.mp3"
+    "../Sound/music/It's Showtime.mp3",
+    "../Sound/music/Hotel - Toby Fox.mp3"
 ];
 
 function getRandomInt(min, max) {
@@ -16,8 +17,7 @@ function getRandomInt(min, max) {
 const music = new Audio(musicList[getRandomInt(0, musicList.length)]);
 music.volume = 0.6
 music.loop = true;
-
-ads.textContent = asda
+ads.textContent = titleMain
 ads.style.textAlign  = "center"
 
 title.appendChild(ads)
@@ -74,10 +74,10 @@ const getDataBase = JSON.parse(localStorage.getItem("game"));
 
 
 
-const idDivContainer = document.getElementById("gameShow")
+const idDivContainer = document.getElementById("gameShow");
 
 const nextGame = document.getElementById("nextGame");
-const previousGame = document.getElementById("previousGame")
+const previousGame = document.getElementById("previousGame");
 
 
 
@@ -87,22 +87,22 @@ let id ;
 let findElement = (array, id)=>{
     return array.find(el => el.id == id)
 }
+const divCardContainer = document.createElement("div");
+const imgCardContainer = document.createElement("img");
+const divCardBody = document.createElement("div");
+const textCard = document.createElement("p");
+
+divCardContainer.style.width = "500px";
+divCardContainer.style.height = "500px";
+divCardContainer.style.padding = "20px"
+divCardContainer.className = `borderButton`;
 
 function selectorGame(array ,index) {
 idDivContainer.textContent = " ";
 
 const game =  findElement(array , index);
 
-const divCardContainer = document.createElement("div");
-const imgCardContainer = document.createElement("img");
-const divCardBody = document.createElement("div");
-const textCard = document.createElement("p")
 
-divCardContainer.style.width = "500px";
-divCardContainer.style.height = "500px";
-divCardContainer.style.padding = "20px"
-divCardContainer.style.border = "none";
-divCardContainer.style.boxShadow = "5px 5px 15px";
 divCardBody.style.padding = "10px";
 divCardBody.style.textAlign = "center";
 
@@ -139,9 +139,13 @@ buttonNext.addEventListener('click', ()=>{
     }else{
         number += 1
     }
-    selectorGame(getDataBase ,number)
+    selectorGame(getDataBase ,number,)
     console.log(number);
     effect.play();
+    divCardContainer.className = `borderButton slide-right`;
+    divCardContainer.addEventListener('animationend',()=>{
+        divCardContainer.className = `borderButton`;
+    })
 })
 
 //Boton que retrocede la lista de juegos
@@ -161,6 +165,11 @@ buttonPrevious.addEventListener('click', ()=>{
         number -= 1
     }
 selectorGame(getDataBase , number)
+    divCardContainer.className = `borderButton slide-left`;
+    divCardContainer.addEventListener('animationend',()=>{
+        divCardContainer.className = `borderButton`;
+    })
+
     console.log(number);
 })
 nextGame.appendChild(buttonNext);
@@ -168,11 +177,12 @@ previousGame.appendChild(buttonPrevious);
 
 const buttonPlay = document.getElementById("buttonPlay");
 
-let button = document.createElement("button");
-button.textContent = "Play"
-button.style.width = "300px"
-button.style.height = "100px"
-button.style.fontSize = "45px"
+let button = document.createElement("a");
+button.textContent = "Jugar";
+button.className = "borderButton centerText animationSelection";
+button.style.width = "250px";
+button.style.height = "100px";
+button.style.fontSize = "45px";
 
 function openGame(index) {
     window.open(`${findElement(getDataBase, index).urlGame}`, "_self");
@@ -199,6 +209,7 @@ buttonPlayMusic.style.height = "70px"
 buttonPlayMusic.style.position = "relative"
 buttonPlayMusic.style.top = "20px"
 buttonPlayMusic.style.cursor = "pointer"
+buttonPlayMusic.className = "animationSelection"
 buttonPlayMusic.style.left = "95%"
 buttonPlayMusic.alt = "Poner musica"
 
@@ -214,6 +225,7 @@ buttonPlayMusic.addEventListener("click", ()=>{
     }
     buttonPlayMusic.src = isMusicListen ? "../assets/musicOff.png" : "../assets/musicOn.png"
     console.log(isMusicListen);
+
 })
 
 musicButton.appendChild(buttonPlayMusic);
@@ -225,3 +237,5 @@ musicButton.appendChild(buttonPlayMusic);
 })();
 
 //Tratar de corregir bug que aveces se escucha el audio y cuando se cliequea
+//Hacer cuando cliquee el titulo ejecute una animació
+//Cambir el texto del boton por negro y blanco cuando haga hover
