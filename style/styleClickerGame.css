@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+#click{
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gameContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 300px;
+    transform: translate(0px,250px);
+}
+
+#gameContainer>div{
+    margin: 50px;
+}
+
+#counter{
+    font-size: 50px;
+}
+
+.borderButton{
+   width: 210px;
+  height: 90px;
+  box-shadow:   -15px 0 0 0 black,
+                 15px 0 0 0 black,
+                 0 -15px 0 0 black,
+                 0 15px 0 0 black;
+}
