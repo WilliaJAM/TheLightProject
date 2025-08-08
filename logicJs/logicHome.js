@@ -62,7 +62,7 @@ const games = [
                 "nameAchievement": "Solo los que no tienen novia consiguen esto."
             }
     },
-]
+];
 
     localStorage.setItem("game", JSON.stringify(games))
 
@@ -81,7 +81,7 @@ const previousGame = document.getElementById("previousGame");
 
 
 
-let number = 0
+let number = 0;
 let id ;
 
 let findElement = (array, id)=>{
@@ -139,7 +139,7 @@ buttonNext.addEventListener('click', ()=>{
     }else{
         number += 1
     }
-    selectorGame(getDataBase ,number,)
+    selectorGame(getDataBase ,number)
     console.log(number);
     effect.play();
     divCardContainer.className = `borderButton rotate-vertical-center`;
@@ -185,7 +185,8 @@ button.style.height = "100px";
 button.style.fontSize = "45px";
 
 function openGame(index) {
-    window.open(`${findElement(getDataBase, index).urlGame}`, "_self");
+    let objectGame = findElement(getDataBase, index)
+    window.open(`${objectGame.urlGame}`, "_self");
 }
 
 const selectedGameEffect = new Audio("../Sound/effects/selectedGame.mp3")

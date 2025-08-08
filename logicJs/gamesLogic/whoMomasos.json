@@ -1,0 +1,21 @@
+[
+    {
+        "comentario": "selectImage, completeSentence, selectAnswer estos son tipos de preguntas selecciona la imagen, cmpleta la oración, seleccion la respuesta correcta"
+    },
+    {
+        "id": 1,
+        "typeQuestion": "selectImage",
+        "question": "¿Que gato tan curioso?",
+        "imageQuestion" : "/assets/imagesQuiz/jueves.jpg",
+        "answer" : ["Jueves de discriminación", "Miercoles de segregación", "Odio los lunes", "Feliz Jueves"],
+        "correctAnswwer": "Jueves de discriminación"
+    },
+    {
+        "id": 2,
+        "typeQuestion": "selectImage",
+        "question": "El murio hace rato ¿Quien era?",
+        "imageQuestion" : "/assets/imagesQuiz/Smurf_Cat.webp",
+        "answer" : ["/assets/imagesQuiz/musicGame/SmurfCat/We live we love we lie - ElAlaskista.mp3", "/assets/imagesQuiz/musicGame/SmurfCat/Monday left me broken - KingcadeMartin.mp3"],
+        "correctAnswwer": "/assets/imagesQuiz/musicGame/SmurfCat/We live we love we lie - ElAlaskista.mp3"
+    }
+]

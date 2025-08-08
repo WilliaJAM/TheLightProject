@@ -8,10 +8,32 @@
     <title>Clicker game</title>
 </head>
 <body class="press-start-2p-regular">
-    <div id="gameContainer">
+    <div class="borderButton" id="gameContainer">
         <div id="counterClicks"></div>
     <div id="buttonClicker"></div>
     </div>
+
+    <!-- Button trigger modal -->
+<button type="button" id="toggleModal" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content noneBorderRadius">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="labelTitleModal"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="bodyModal">
+        
+      </div>
+      <div id="tooltip" class="modal-footer" style="text-align: center;">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div id="backToHome"></div>
 </body>
 <script src="../logicJs/gamesLogic/clickerGame.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

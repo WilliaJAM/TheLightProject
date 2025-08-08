@@ -7,22 +7,33 @@
 }
 
 
+#buttonClicker{
+    user-select: none;
+}
+
+#buttonClicker :hover{
+    transform: scale(1.1);
+}
+
 #click{
     font-size: 40px;
     cursor: pointer;
-    user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #gameContainer{
+    margin: 0 auto;
+    min-height: 70vh;
+    width: 50%;
+    border: 1px solid;
+    margin-top: 20px;
+
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     flex-direction: column;
-    height: 300px;
-    transform: translate(0px,250px);
 }
 
 #gameContainer>div{
@@ -40,4 +51,36 @@
                  15px 0 0 0 black,
                  0 -15px 0 0 black,
                  0 15px 0 0 black;
+}
+/*Estilo del boton*/
+#backIcon{
+    width: 100px;
+    height:100px;
+}
+#backIcon:hover{
+    transform: scale(1.1);
+}
+
+
+.noneBorderRadius{
+    border-radius: 0%;
+}
+
+#bodyModal>button{
+    margin: 10px;
+}
+
+#backToHome{
+    width: 105px;
+
+    position: relative;
+    top: 110px;
+    left: 10px;
+}
+
+#toggleModal{
+    position: relative;
+    top: 80px;
+    left: 834px;
+
 }
