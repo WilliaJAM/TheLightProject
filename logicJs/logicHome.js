@@ -62,7 +62,7 @@ const games = [
                 "nameAchievement": "Solo los que no tienen novia consiguen esto."
             }
     },
-]
+];
 
     localStorage.setItem("game", JSON.stringify(games))
 
@@ -81,7 +81,7 @@ const previousGame = document.getElementById("previousGame");
 
 
 
-let number = 0
+let number = 0;
 let id ;
 
 let findElement = (array, id)=>{
@@ -139,10 +139,10 @@ buttonNext.addEventListener('click', ()=>{
     }else{
         number += 1
     }
-    selectorGame(getDataBase ,number,)
+    selectorGame(getDataBase ,number)
     console.log(number);
     effect.play();
-    divCardContainer.className = `borderButton slide-right`;
+    divCardContainer.className = `borderButton rotate-vertical-center`;
     divCardContainer.addEventListener('animationend',()=>{
         divCardContainer.className = `borderButton`;
     })
@@ -165,7 +165,7 @@ buttonPrevious.addEventListener('click', ()=>{
         number -= 1
     }
 selectorGame(getDataBase , number)
-    divCardContainer.className = `borderButton slide-left`;
+    divCardContainer.className = `borderButton rotate-vertical-center`;
     divCardContainer.addEventListener('animationend',()=>{
         divCardContainer.className = `borderButton`;
     })
@@ -185,7 +185,8 @@ button.style.height = "100px";
 button.style.fontSize = "45px";
 
 function openGame(index) {
-    window.open(`${findElement(getDataBase, index).urlGame}`, "_self");
+    let objectGame = findElement(getDataBase, index)
+    window.open(`${objectGame.urlGame}`, "_self");
 }
 
 const selectedGameEffect = new Audio("../Sound/effects/selectedGame.mp3")
@@ -236,6 +237,7 @@ musicButton.appendChild(buttonPlayMusic);
     selectorGame(getDataBase , number);
 })();
 
-//Tratar de corregir bug que aveces se escucha el audio y cuando se cliequea
-//Hacer cuando cliquee el titulo ejecute una animació
-//Cambir el texto del boton por negro y blanco cuando haga hover
+//Tratar de corregir bug que aveces se escucha el audio y cuando se cliequea.
+//Hacer cuando cliquee el titulo ejecute una animación y cuadrar cuando cambia de contenido
+//Ademas mejorar el cambio de clase cuando ejecuta la animación.
+//Cambir el texto del boton por negro y blanco cuando haga hover.
