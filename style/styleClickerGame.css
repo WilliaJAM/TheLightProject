@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+#buttonClicker{
+    user-select: none;
+}
+
+#buttonClicker :hover{
+    transform: scale(1.1);
+}
+
+#click{
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gameContainer{
+    margin: 0 auto;
+    min-height: 70vh;
+    width: 50%;
+    border: 1px solid;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#gameContainer>div{
+    margin: 50px;
+}
+
+#counter{
+    font-size: 50px;
+}
+
+.borderButton{
+   width: 210px;
+  height: 90px;
+  box-shadow:   -15px 0 0 0 black,
+                 15px 0 0 0 black,
+                 0 -15px 0 0 black,
+                 0 15px 0 0 black;
+}
+/*Estilo del boton*/
+#backIcon{
+    width: 100px;
+    height:100px;
+}
+#backIcon:hover{
+    transform: scale(1.1);
+}
+
+
+.noneBorderRadius{
+    border-radius: 0%;
+}
+
+#bodyModal>button{
+    margin: 10px;
+}
+
+#backToHome{
+    width: 105px;
+
+    position: relative;
+    top: 110px;
+    left: 10px;
+}
+
+#toggleModal{
+    position: relative;
+    top: 80px;
+    left: 834px;
+
+}
